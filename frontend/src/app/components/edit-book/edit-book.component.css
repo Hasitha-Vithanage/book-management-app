@@ -1,0 +1,133 @@
+.form-page {
+  display: flex;
+  justify-content: center;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 580px;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.form-header-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.form-header-icon mat-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.form-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.form-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin: 2px 0 0 0;
+}
+
+.loading-bar {
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.error-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #fef2f2, #fff1f2);
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md);
+  color: var(--color-warn);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.form-card {
+  padding: 8px;
+}
+
+mat-card-content {
+  padding: 24px !important;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.save-btn {
+  flex: 1;
+}
+
+.cancel-btn {
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    max-width: 100%;
+  }
+
+  .form-header {
+    margin-bottom: 20px;
+  }
+
+  .form-title {
+    font-size: 1.25rem;
+  }
+
+  mat-card-content {
+    padding: 16px !important;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .save-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}

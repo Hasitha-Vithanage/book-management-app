@@ -1,0 +1,22 @@
+<header class="app-header">
+  <div class="header-inner">
+    <a class="brand" routerLink="/">
+      <mat-icon class="brand-icon">auto_stories</mat-icon>
+      <span class="brand-text">BookShelf</span>
+    </a>
+    <nav class="nav-links">
+      <a class="nav-link" routerLink="/books" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>library_books</mat-icon>
+        <span>Library</span>
+      </a>
+      <a class="nav-link" routerLink="/books/add" routerLinkActive="active">
+        <mat-icon>add_circle_outline</mat-icon>
+        <span>Add Book</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main class="app-content page-enter">
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,71 @@
+<div class="details-page">
+  <div class="details-container">
+    <div class="details-header">
+      <button mat-stroked-button (click)="navigateToList()" aria-label="Back to book list" class="back-btn">
+        <mat-icon>arrow_back</mat-icon> Back to Library
+      </button>
+    </div>
+
+    <mat-progress-bar mode="indeterminate" *ngIf="isLoading" aria-label="Loading book details" class="loading-bar">
+    </mat-progress-bar>
+
+    <div *ngIf="errorMessage" class="error-banner" role="alert">
+      <mat-icon>error_outline</mat-icon>
+      <span>{{ errorMessage }}</span>
+    </div>
+
+    <div *ngIf="!isLoading && !errorMessage && book" class="details-content">
+      <mat-card class="details-card">
+        <div class="book-hero">
+          <div class="book-avatar">
+            <mat-icon>menu_book</mat-icon>
+          </div>
+          <div class="book-main-info">
+            <h1 class="book-title">{{ book.title }}</h1>
+            <p class="book-author">by {{ book.author }}</p>
+          </div>
+        </div>
+
+        <mat-card-content>
+          <div class="detail-grid">
+            <div class="detail-item">
+              <div class="detail-icon-wrapper">
+                <mat-icon>fingerprint</mat-icon>
+              </div>
+              <div class="detail-info">
+                <span class="detail-label">Book ID</span>
+                <span class="detail-value">{{ book.id }}</span>
+              </div>
+            </div>
+
+            <div class="detail-item">
+              <div class="detail-icon-wrapper">
+                <mat-icon>qr_code</mat-icon>
+              </div>
+              <div class="detail-info">
+                <span class="detail-label">ISBN</span>
+                <code class="detail-value isbn-code">{{ book.isbn }}</code>
+              </div>
+            </div>
+
+            <div class="detail-item">
+              <div class="detail-icon-wrapper">
+                <mat-icon>calendar_today</mat-icon>
+              </div>
+              <div class="detail-info">
+                <span class="detail-label">Publication Date</span>
+                <span class="detail-value">{{ formatDate(book.publicationDate) }}</span>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+
+        <div class="card-footer">
+          <button mat-raised-button color="primary" [routerLink]="['/books/edit', book.id]" aria-label="Edit this book">
+            <mat-icon>edit</mat-icon> Edit Book
+          </button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,265 @@
+:root {
+    --color-primary: #4f46e5;
+    --color-primary-light: #818cf8;
+    --color-primary-dark: #3730a3;
+    --color-accent: #06b6d4;
+    --color-accent-light: #67e8f9;
+    --color-warn: #ef4444;
+    --color-warn-light: #fca5a5;
+    --color-success: #10b981;
+    --color-success-light: #6ee7b7;
+
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-surface-hover: #f1f5f9;
+    --color-border: #e2e8f0;
+    --color-border-light: #f1f5f9;
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #64748b;
+    --color-text-muted: #94a3b8;
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.mat-mdc-card {
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-md) !important;
+    border: 1px solid var(--color-border-light) !important;
+    transition: box-shadow var(--transition-normal), transform var(--transition-normal) !important;
+}
+
+.mat-mdc-card:hover {
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.mat-mdc-card-header {
+    padding: 24px 24px 16px !important;
+}
+
+.mat-mdc-card-title {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 1.25rem !important;
+    color: var(--color-text-primary) !important;
+    letter-spacing: -0.01em !important;
+}
+
+.mat-mdc-card-subtitle {
+    font-family: 'Inter', sans-serif !important;
+    color: var(--color-text-secondary) !important;
+    font-weight: 400 !important;
+}
+
+.mat-mdc-raised-button.mat-primary {
+    background-color: var(--color-primary) !important;
+    border-radius: var(--radius-sm) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    padding: 0 20px !important;
+    height: 40px !important;
+    box-shadow: 0 1px 3px rgba(79, 70, 229, 0.3) !important;
+    transition: all var(--transition-fast) !important;
+}
+
+.mat-mdc-raised-button.mat-primary:hover {
+    background-color: var(--color-primary-dark) !important;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35) !important;
+    transform: translateY(-1px);
+}
+
+.mat-mdc-raised-button.mat-warn {
+    background-color: var(--color-warn) !important;
+    border-radius: var(--radius-sm) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+}
+
+.mat-mdc-outlined-button,
+.mdc-button--outlined {
+    border-radius: var(--radius-sm) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    border-color: var(--color-border) !important;
+    color: var(--color-text-secondary) !important;
+    height: 40px !important;
+    transition: all var(--transition-fast) !important;
+}
+
+.mat-mdc-outlined-button:hover,
+.mdc-button--outlined:hover {
+    background-color: var(--color-surface-hover) !important;
+    border-color: var(--color-text-muted) !important;
+}
+
+.mat-mdc-icon-button {
+    transition: all var(--transition-fast) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+.mat-mdc-icon-button:hover {
+    background-color: var(--color-surface-hover) !important;
+}
+
+.mat-mdc-form-field {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.mdc-text-field--outlined .mdc-notched-outline__leading,
+.mdc-text-field--outlined .mdc-notched-outline__notch,
+.mdc-text-field--outlined .mdc-notched-outline__trailing {
+    border-color: var(--color-border) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+.mat-mdc-table {
+    border-radius: var(--radius-md) !important;
+    overflow: hidden !important;
+    border: 1px solid var(--color-border-light) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.mat-mdc-header-row {
+    background-color: #f8fafc !important;
+    border-bottom: 2px solid var(--color-border) !important;
+}
+
+.mat-mdc-header-cell {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: var(--color-text-secondary) !important;
+    padding: 16px !important;
+}
+
+.mat-mdc-row {
+    transition: background-color var(--transition-fast) !important;
+    border-bottom: 1px solid var(--color-border-light) !important;
+}
+
+.mat-mdc-row:hover {
+    background-color: #f8fafc !important;
+}
+
+.mat-mdc-row:last-child {
+    border-bottom: none !important;
+}
+
+.mat-mdc-cell {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.875rem !important;
+    color: var(--color-text-primary) !important;
+    padding: 16px !important;
+}
+
+.mat-mdc-progress-bar {
+    border-radius: 4px !important;
+    overflow: hidden !important;
+}
+
+.success-snackbar .mdc-snackbar__surface {
+    background-color: var(--color-success) !important;
+}
+
+.error-snackbar .mdc-snackbar__surface {
+    background-color: var(--color-warn) !important;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+    border-radius: var(--radius-lg) !important;
+    padding: 0 !important;
+}
+
+.mat-mdc-tooltip .mdc-tooltip__surface {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.75rem !important;
+    border-radius: 6px !important;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-text-muted);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-secondary);
+}
+
+
+.page-enter {
+    animation: fadeInUp 0.4s ease-out;
+}
